@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 import pickle
 
-filename = 'voting_clf_DATA300.pkl'
+filename = 'voting_clf_DATA1000.pkl'
 classifier = pickle.load(open(filename, 'rb'))
-cv = pickle.load(open('countvector_300DATA.pkl','rb'))
+cv = pickle.load(open('countvector_1000DATA.pkl','rb'))
 
 app = Flask(__name__)
 
@@ -15,6 +15,7 @@ def home():
 def predict():
     if request.method == 'POST':
         message = request.form['message']
+        result = request.form['result']
         if message == '':
             return render_template('index.html', valid=0)
         else:

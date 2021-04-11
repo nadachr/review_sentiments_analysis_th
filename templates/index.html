@@ -28,20 +28,31 @@
                 </div>
             {% endif %}
     		<form action="{{ url_for('predict') }}" method="POST">
-        		<textarea class='message-box' name="message" rows="15" cols="75" placeholder="ตัวอย่าง: 'อาหารอร่อยมาก', 'เป็นร้านอาหารที่ยอดเยี่ยมมากๆ', 'บริการแย่มาก' หรือ 'น้ำซุปเค็มมาก รสชาติแบบนี้ไม่ผ่าน' เป็นต้น"></textarea><br/>
-        		<input type="submit" class="my-cta-button" value="วิเคราะห์">
+                <div class="container">
+                    <div class="row">
+                        <textarea class='message-box' name="message" rows="15" cols="75" placeholder="ตัวอย่าง: 'อาหารอร่อยมาก', 'เป็นร้านอาหารที่ยอดเยี่ยมมากๆ', 'บริการแย่มาก' หรือ 'น้ำซุปเค็มมาก รสชาติแบบนี้ไม่ผ่าน' เป็นต้น"></textarea><br/>
+                    </div>
+                    <div class="row" style="margin-bottom: 10px;">
+                        <h3>เลือกผลลัพธ์ที่ถูกต้องของข้อความ <b>*จำเป็น</b></h3>
+                        <input type="radio" id="pos" name="result" value="1" required>
+                        <label for="pos">แง่บวก (Positive)</label><br>
+                        <input type="radio" id="neg" name="result" value="0" required>
+                        <label for="neg">แง่ลบ (Negative)</label><br>
+                    </div>
+                    <input type="submit" id="submit" class="my-cta-button" value="วิเคราะห์">
+                </div>
         	</form>
         </div>
         
         <div class='footer'>
-            <div class="contact">
+            <!-- <div class="contact">
              <a target="_blank" href="https://github.com/nadachr"><i class="fab fa-github fa-lg contact-icon"></i></a>
              <a target="_blank" href="https://www.facebook.com/nada.the.unknown/"><i class="fab fa-facebook fa-lg contact-icon"></i></a>
              <a target="_blank" href="https://www.instagram.com/nada_with_an_a/"><i class="fab fa-instagram fa-lg contact-icon"></i></a>
-            </div>
+            </div> -->
             <p class='footer-description'>Nada Chemreh 161404140022</p>
-            <p class='footer-description'>Kritsanaphong Muninnoppamat 1614041400--</p>
-            <p class='footer-description'>Jiraphong Songniam 1614041400--</p>
+            <p class='footer-description'>Kritsanaphong Muninnoppamat 161404140013</p>
+            <p class='footer-description'>Jiraphong Songniam 161404140016</p>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
